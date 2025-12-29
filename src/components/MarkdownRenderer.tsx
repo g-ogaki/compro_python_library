@@ -7,7 +7,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
   return (
     <Markdown
       remarkPlugins={[remarkMath]}
-      rehypePlugins={[rehypeKatex]}
+      rehypePlugins={[[rehypeKatex, { fleqn: true }]]}
       components={{
         h1: ({ node, ...props }) => <h1 className="text-3xl font-bold" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-2xl font-bold p-1 mt-2 border-b-1 border-gray-300" {...props} />,
