@@ -43,9 +43,9 @@ class RollingHash(object):
 
 if __name__ == "__main__":
     S = "abcabc"
-    T = "cab"
-    rhs = RollingHash(S)
-    rht = RollingHash(T)
-    print(rhs[2:5] == rht[0:3])
-    rhs[2] = 'd'
-    print(rhs[2:5] == rht[0:3])
+    T = "dab"
+    S_hash = RollingHash(S)
+    T_hash = RollingHash(T)
+    print(S_hash[2:5] == T_hash[0:3])
+    S_hash[2] = 'd'
+    print(S_hash[2:5] == T_hash[0:3])

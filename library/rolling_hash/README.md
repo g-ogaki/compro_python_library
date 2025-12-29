@@ -13,7 +13,7 @@ Calculates the hash of all substrings.
 - Time: $O(n)$
 - Space: $O(n)$
 
-where n represents the length of the string `S`.
+where $n$ represents the length of the string `S`.
 
 ## add
 
