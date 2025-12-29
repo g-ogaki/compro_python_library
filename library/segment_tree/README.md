@@ -45,7 +45,7 @@ Sets the `i`-th element of the array
 
 ## sum
 
-Calculate the sum of the subarray $A[l:r]$.
+Calculates the sum of the subarray $A[l:r]$.
 
 ### Arguments
 - `l: int`: left index
@@ -59,7 +59,7 @@ Calculate the sum of the subarray $A[l:r]$.
 
 ## bisect_left
 
-Find the largest $r$ such that sum of subarray $A[l:r]$ is less than $x$.
+Finds the largest $r$ such that sum of subarray $A[l:r]$ is less than $x$.
 
 ### Arguments
 - `l: int`: left index

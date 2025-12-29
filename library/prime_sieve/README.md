@@ -1,6 +1,6 @@
 # Prime Sieve
 
-List all prime numbers less than or equal to a given number.
+Lists all prime numbers less than or equal to a given number.
 
 ## Arguments
 - `n: int`: integer up to which prime numbers are calculated

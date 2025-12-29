@@ -1,5 +1,3 @@
-# https://ei1333.github.io/luzhiled/snippets/string/rolling-hash.html
-# http://perogram.hateblo.jp/entry/rolling_hash
 from random import randrange
 class RollingHash(object):
     _b, _p = randrange(140, 999), (1 << 61) - 1
@@ -42,3 +40,12 @@ class RollingHash(object):
         while i != 1:
             i >>= 1
             tree[i] = add(tree[i << 1], tree[i << 1 | 1])
+
+if __name__ == "__main__":
+    S = "abcabc"
+    T = "cab"
+    rhs = RollingHash(S)
+    rht = RollingHash(T)
+    print(rhs[2:5] == rht[0:3])
+    rhs[2] = 'd'
+    print(rhs[2:5] == rht[0:3])

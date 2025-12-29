@@ -15,7 +15,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
         ul: ({ node, ...props }) => <ul className="list-disc list-inside pl-6" {...props} />,
         ol: ({ node, ...props }) => <ol className="list-decimal list-inside pl-6" {...props} />,
         li: ({ node, ...props }) => <li className="my-1" {...props} />,
-        code: ({ node, ...props }) => <code className="bg-gray-100 text-red-500 rounded px-1.5 py-0.5 mr-1" {...props} />,
+        code: ({ node, ...props }) => <code className="bg-gray-100 text-red-500 rounded px-1.5 py-0.5 mr-0.5" {...props} />,
       }}
     >
       {children}
