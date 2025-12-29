@@ -1,4 +1,3 @@
-# https://judge.yosupo.jp/problem/two_edge_connected_components
 def lowlink(n, E):
     m = len(E)
     G = [[] for _ in range(n)]
@@ -33,3 +32,9 @@ def lowlink(n, E):
                 dp[p] += dp[v]
 
     return G, is_bridge
+
+if __name__ == "__main__":
+    n = 5
+    E = [(0, 1), (1, 2), (2, 0), (2, 3), (3, 4)]
+    G, is_bridge = lowlink(n, E)
+    print(is_bridge)
