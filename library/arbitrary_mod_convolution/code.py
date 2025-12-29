@@ -1,4 +1,4 @@
-def _fmt(f, prime, root = 3, inverse = False):
+def _fmt(f, prime, root=3, inverse=False):
     N = len(f)
     logN = (N - 1).bit_length()
     base = pow(root, (prime - 1) // N * (1 - 2 * inverse) % (prime - 1), prime)
@@ -23,7 +23,8 @@ def _fmt(f, prime, root = 3, inverse = False):
 def convolve(f, g, MOD):
     N = 1 << (len(f) + len(g) - 2).bit_length()
     primes = [167772161, 469762049, 1224736769]
-    Ffs, Fgs = [_fmt([a % MOD for a in f] + [0] * (N - len(f)), p) for p in primes], [_fmt([b % MOD for b in g] + [0] * (N - len(g)), p) for p in primes]
+    Ffs = [_fmt([a % MOD for a in f] + [0] * (N - len(f)), p) for p in primes]
+    Fgs = [_fmt([b % MOD for b in g] + [0] * (N - len(g)), p) for p in primes]
     fgs = [_fmt([a * b % p for a, b in zip(Ff, Fg)], p, inverse = True) for Ff, Fg, p in zip(Ffs, Fgs, primes)]
     fg = []
     primes.append(MOD)
@@ -40,3 +41,9 @@ def convolve(f, g, MOD):
         fg.append(consts[-1])
         if len(fg) == len(f) + len(g) - 1:
             return fg
+
+if __name__ == "__main__":
+    f = [1, 2, 3]
+    g = [4, 5]
+    MOD = 1000000007
+    print(convolve(f, g, MOD))

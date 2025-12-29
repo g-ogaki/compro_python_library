@@ -1,4 +1,4 @@
-prime = 119 << 23 | 1
+prime = 998244353
 root = 3
 def _fmt(f, inverse=False):
     N = len(f)
@@ -28,3 +28,8 @@ def convolve(f, g):
     fg = _fmt([a * b % prime for a, b in zip(Ff, Fg)], True)
     del fg[len(f) + len(g) - 1:]
     return fg
+
+if __name__ == "__main__":
+    f = [1, 2, 3]
+    g = [4, 5]
+    print(convolve(f, g))

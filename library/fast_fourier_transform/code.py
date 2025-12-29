@@ -25,3 +25,9 @@ def convolve(f, g):
     fg = _fft([a * b for a, b in zip(Ff, Fg)], inverse = True)
     del fg[len(f) + len(g) - 1:]
     return fg
+
+if __name__ == "__main__":
+    f = [1, 2, 3]
+    g = [4, 5]
+    fg = [round(abs(x)) for x in convolve(f, g)]
+    print(fg)
