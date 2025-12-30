@@ -1,5 +1,3 @@
-# Union Find (amortized O(ack^-1(N)))
-# https://www.slideshare.net/chokudai/union-find-49066733
 class UnionFind(object):
     def __init__(self, n):
         self._par = [*range(n)]
@@ -28,3 +26,11 @@ class UnionFind(object):
 
     def size(self, k):
         return self._size[self.root(k)]
+
+if __name__ == "__main__":
+    uf = UnionFind(5)
+    uf.unite(0, 1)
+    uf.unite(1, 2)
+    print(uf.is_connected(0, 2))
+    print(uf.is_connected(0, 3))
+    print(uf.size(0))
