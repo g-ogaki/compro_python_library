@@ -3,7 +3,7 @@
 Data structure for undirected graphs that supports:
 
 - edge addition: connect two vertices
-- connection detection: determine whether two vertices are in the same connected component
+- connectivity detection: determine whether two vertices are in the same connected component
 
 ## \_\_init\_\_
 

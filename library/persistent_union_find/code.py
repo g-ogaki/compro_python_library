@@ -1,13 +1,14 @@
-k = 20
 class PersistentArray(object):
+    k = 20
+
     def __init__(self, A):
         if isinstance(A, list):
-            queue = [(A[0], [None] * k)]
+            queue = [(A[0], [None] * self.k)]
             for i, node in enumerate(queue):
-                for j in range(k):
-                    ni = k * i + j + 1
+                for j in range(self.k):
+                    ni = self.k * i + j + 1
                     if ni < len(A):
-                        node[1][j] = (A[ni], [None] * k)
+                        node[1][j] = (A[ni], [None] * self.k)
                         queue.append(node[1][j])
             self.root = queue[0]
         else:
@@ -17,7 +18,7 @@ class PersistentArray(object):
         node = self.root
         path = []
         while i:
-            i, r = divmod(i - 1, k)
+            i, r = divmod(i - 1, self.k)
             path.append(r)
         for i in path[::-1]:
             node = node[1][i]
@@ -27,7 +28,7 @@ class PersistentArray(object):
         node = self.root
         path = []
         while i:
-            i, r = divmod(i - 1, k)
+            i, r = divmod(i - 1, self.k)
             path.append(r)
         stack = []
         for i in path[::-1]:
@@ -68,3 +69,10 @@ class PersistentUnionFind(object):
 
     def size(self, i):
         return self._size[self.root(i)]
+
+if __name__ == "__main__":
+    uf0 = PersistentUnionFind(5)
+    uf1 = uf0.unite(0, 1)
+    uf2 = uf1.unite(1, 2)
+    print(uf1.is_connected(0, 2))
+    print(uf2.is_connected(0, 2))
