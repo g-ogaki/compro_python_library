@@ -1,4 +1,3 @@
-# https://ei1333.github.io/library/structure/others/disjoint-sparse-table.hpp
 class DisjointSparseTable(object):
     def __init__(self, A, dot):
         N = len(A)
@@ -16,9 +15,13 @@ class DisjointSparseTable(object):
             data.append(nA)
         self._data, self._dot = data, dot
     
-    def sum(self, l, r):
+    def prod(self, l, r):
         r -= 1
         if l == r:
             return self._data[0][l]
         msb = (l ^ r).bit_length() - 1
         return self._dot(self._data[msb][l], self._data[msb][r])
+
+if __name__ == "__main__":
+    dst = DisjointSparseTable([1, 2, 3, 4, 5], max)
+    print(dst.prod(1, 4))
