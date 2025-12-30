@@ -3,8 +3,8 @@
 Data structure for arrays of monoids $(M, \cdot, e)$ that supports:
 
 - point update: $A[i] \gets v$
-- range query: Find $A[l] \cdot A[l+1] \cdot \ldots \cdot A[r-1]$
-- lower bound: Given $l$ and $x$, find the largest $r$ such that $A[l] \cdot A[l+1] \cdot \ldots \cdot A[r-1] < x$.
+- range query: find $A[l] \cdot A[l+1] \cdot \ldots \cdot A[r-1]$
+- lower bound: given $l$ and $x$, find the largest $r$ such that $A[l] \cdot A[l+1] \cdot \ldots \cdot A[r-1] < x$.
 
 ## \_\_init\_\_
 

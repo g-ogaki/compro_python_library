@@ -1,6 +1,6 @@
 # Persistent Union Find
 
-Fully persistent data structure that supports:
+Fully persistent data structure for undirected graphs that supports:
 
 - edge addition: connect two vertices
 - connectivity detection: determine whether two vertices are in the same connected component

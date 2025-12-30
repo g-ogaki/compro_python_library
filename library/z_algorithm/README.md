@@ -10,7 +10,7 @@ Calculates the length of the longest common prefix of `S` and `S[i:]` for all `i
 
 ### Returns
 
-- `list[int]`: list of the length of the longest common prefix of `S` and `S[i:]`.
+- `list[int]`: list of the length of the longest common prefix of `S` and `S[i:]`
 
 ### Complexities
 

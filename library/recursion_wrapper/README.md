@@ -8,7 +8,7 @@ In the recursive function, `yield` must be used to return the value of the recur
 
 ### Arguments
 
-- `cache: bool`: Whether to enable memoization.
+- `cache: bool = False`: Whether to enable memoization.
 
 ### Returns
 
