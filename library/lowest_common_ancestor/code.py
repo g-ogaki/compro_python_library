@@ -1,4 +1,3 @@
-# https://tjkendev.github.io/procon-library/python/graph/lca-doubling.html
 class LCA(object):
     def __init__(self, G, root=0):
         self._n = len(G)
@@ -39,3 +38,16 @@ class LCA(object):
             if pu != pv:
                 u, v = pu, pv
         return self.parents[0][u]
+
+if __name__ == "__main__":
+    G = [
+        [1, 2],
+        [0, 3, 4],
+        [0],
+        [1],
+        [1],
+    ]
+    lca = LCA(G)
+    print(lca.lca(1, 3))
+    print(lca.lca(1, 4))
+    print(lca.lca(2, 4))
