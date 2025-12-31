@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const Header = () => {
   return (
@@ -13,8 +14,8 @@ export const Header = () => {
         className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
         aria-label="GitHub Repository"
       >
-        <img
-          src="github-mark-white.png"
+        <Image
+          src="/github-mark-white.png"
           alt="GitHub"
           width={24}
           height={24}
