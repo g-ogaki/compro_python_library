@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import githubMark from "../assets/github-mark-white.png";
 
 export const Header = () => {
   return (
@@ -15,10 +16,8 @@ export const Header = () => {
         aria-label="GitHub Repository"
       >
         <Image
-          src="/github-mark-white.png"
+          src={githubMark}
           alt="GitHub"
-          width={24}
-          height={24}
           className="w-6 h-6 invert"
         />
       </a>
