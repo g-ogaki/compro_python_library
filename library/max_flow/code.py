@@ -1,7 +1,4 @@
-# https://people.orie.cornell.edu/dpw/orie633/
-# https://ta1sa.hatenablog.com/entry/2020/04/13/123802
-# https://www.youtube.com/watch?v=_SdF4KK_dyM
-# https://atcoder.jp/contests/practice2/submissions/16784996
+INF = 1 << 60
 class MaxFlow(object):
     def __init__(self, n):
         self.n = n
@@ -60,3 +57,12 @@ class MaxFlow(object):
                 if not f:
                     break
         return res
+
+if __name__ == "__main__":
+    mf = MaxFlow(4)
+    mf.add_edge(0, 1, 3)
+    mf.add_edge(0, 2, 2)
+    mf.add_edge(1, 2, 1)
+    mf.add_edge(1, 3, 1)
+    mf.add_edge(2, 3, 3)
+    print(mf.solve(0, 3))
