@@ -1,13 +1,11 @@
-# https://judge.yosupo.jp/submission/25696
-# https://www.geeksforgeeks.org/introduction-to-heavy-light-decomposition/
 class HeavyLightDecomposition(object):
     def __init__(self, G, root=0):
-        N = len(G)
-        self._par = [-1] * N
-        self._size = [1] * N
-        self._heavy_child = [-1] * N
-        self._head = [0] * N
-        self._order = [0] * N
+        n = len(G)
+        self._par = [-1] * n
+        self._size = [1] * n
+        self._heavy_child = [-1] * n
+        self._head = [0] * n
+        self._order = [0] * n
         self._dfs_heavy_child(G, root)
         self._dfs_decomposition(G, root)
     
@@ -56,6 +54,14 @@ class HeavyLightDecomposition(object):
             if head[u] == head[v]:
                 return u
             v = par[head[v]]
+    
+    @property
+    def node_to_order(self):
+        return self._order
+    
+    def edge_to_order(self, E):
+        par, order = self._par, self._order
+        return [order[u] if par[u] == v else order[v] for u, v in E]
 
     def _ascend(self, u, v):
         par, head, order = self._par, self._head, self._order
@@ -73,10 +79,16 @@ class HeavyLightDecomposition(object):
     def path(self, u, v, edge=False):
         l = self.lca(u, v)
         return self._ascend(u, l) + ([] if edge else [(self._order[l], self._order[l])]) + self._descend(l, v)
-    
-    def get_order(self):
-        return self._order
-    
-    def edge_to_order(self, E):
-        par, order = self._par, self._order
-        return [order[u] if par[u] == v else order[v] for u, v in E]
+
+if __name__ == "__main__":
+    G = [
+        [1, 2],
+        [0, 3, 4],
+        [0, 5],
+        [1],
+        [1],
+        [2]
+    ]
+    hld = HeavyLightDecomposition(G)
+    print(hld.node_to_order)
+    print(hld.path(3, 5))
