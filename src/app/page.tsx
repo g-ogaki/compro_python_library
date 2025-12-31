@@ -7,9 +7,12 @@ export default async function Page() {
 
   return (
     <div className="max-w-3xl mx-auto py-10 px-4">
-      <div className="bg-white shadow ring-1 ring-black ring-opacity-5 rounded-lg overflow-hidden">
+      <h1 className="text-3xl font-bold mb-6">Compro Python Library</h1>
+      <p className="text-gray-600 mb-6">A collection of algorithms and data structures implemented in Python when the author was into competitive programming.</p>
+      <h2 className="text-2xl font-bold py-1 my-4">Library</h2>
+      <div className="bg-white shadow ring-1 ring-black ring-opacity-5 rounded-lg overflow-hidden my-4">
         <div className="px-6 py-5 border-b border-gray-200 bg-gray-50">
-          <h2 className="font-semibold text-gray-800">Algorithms / Data Structures</h2>
+          <h3 className="font-semibold text-gray-800">Algorithms / Data Structures</h3>
         </div>
         <ul className="divide-y divide-gray-200">
           {items.map((item) => (
@@ -29,6 +32,13 @@ export default async function Page() {
           ))}
         </ul>
       </div>
+      <h2 className="text-2xl font-bold py-1 my-4">Author</h2>
+      <ul className="list-disc list-inside pl-6">
+        <li className="my-1">AtCoder: <a target="_blank" className="text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://atcoder.jp/users/moni0627">moni0627</a></li>
+        <li className="my-1">Library Checker: <a target="_blank" className="text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://judge.yosupo.jp/user/onakasuitacity">onakasuitacity</a></li>
+      </ul>
+      <h2 className="text-2xl font-bold py-1 my-4">License</h2>
+      <p className="text-gray-600 mb-6">(to be written)</p>
     </div>
   );
 }
