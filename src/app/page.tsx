@@ -18,7 +18,7 @@ export default async function Page() {
           {items.map((item) => (
             <li key={item}>
               <a
-                href={`${item}/document`}
+                href={`${item}`}
                 className="flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors duration-150 group"
               >
                 <span className="text-sm font-medium text-gray-700 group-hover:text-blue-600">

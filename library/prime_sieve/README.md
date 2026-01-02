@@ -5,7 +5,7 @@ Lists all prime numbers less than or equal to a given number.
 ## prime_sieve
 
 ### Arguments
-- `n: int`: integer up to which prime numbers are calculated
+- `n: int`: integer up to which prime numbers are listed
 
 ### Returns
 - `primes, sieve: tuple[list[int], list[int]]`
